@@ -1,0 +1,139 @@
+/* ----------------------------------------------------------------------
+    @@@ Général
+---------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+/* Tous les liens de l'app ont un padding afin d'augmenter la taille de la zone réactive */
+a {
+    color: currentColor;
+    display: inline-block;
+    padding: 10px;
+    transition: color 400ms ease-in-out;
+}
+a:hover {
+    color: rgb(32, 192, 255);
+}
+/* ----------------------------------------------------------------------
+    @@@ Layout
+---------------------------------------------------------------------- */
+#app-wrapper {
+    height: 100vh;
+    background: lime;
+    display: flex;
+    flex-direction: column;
+}
+#app-top {
+    background: yellow;
+    display: flex;
+    flex-grow: 1;
+}
+#app-bottom {
+    background: blue;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+}
+/* ----------------------------------------------------------------------
+    @@@ Sidebar
+---------------------------------------------------------------------- */
+#app-nav {
+    width: 50px;
+    background: red;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#app-content {
+    flex-grow: 1;
+}
+/* ----------------------------------------------------------------------
+    @@@ Partie album
+---------------------------------------------------------------------- */
+#album {
+    background: purple;
+    padding: 20px;
+    display: flex;
+}
+.cover {
+    margin-right: 20px;
+}
+.album-infos {
+    color: white;
+}
+.album-infos h1 {
+    font-size: 3em;
+}
+
+/* ----------------------------------------------------------------------
+    @@@ Partie tracklist
+---------------------------------------------------------------------- */
+#tracklist {
+    background: violet;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.track-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.8em;
+    transition: color 400ms ease-in-out;
+    display: flex;
+    justify-content: space-between;
+}
+.track-item:hover {
+    color: rgb(32, 192, 255);
+    cursor: pointer;
+}
+#tracklist p {
+    margin: 0;
+    padding: 10px;
+}
+/* ----------------------------------------------------------------------
+    @@@ Partie Player : lecture en cours + controls
+---------------------------------------------------------------------- */
+#app-bottom .current {
+    background: darkblue;
+    display: flex;
+    flex-grow: 1;
+}
+#app-bottom .current-details {
+    margin-left: 20px;
+}
+#app-bottom .author {
+    font-size: 0.8em;
+    margin: 0;
+}
+#app-bottom .track {
+    color: rgb(32, 192, 255);
+    margin: 0 0 10px;
+}
+#app-bottom .controls {
+    width: 30%;
+    background: cornflowerblue;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* ------------------------------------------------------------------------
+    @@@ Partie changement de couleurs
+------------------------------------------------------------------------ */
+#app-wrapper #app-bottom div,#app-nav,#app-bottom {
+    background-color: #313131;
+}
+#tracklist, #album {
+    background-color: rgba(255, 255, 255, 0);
+}
+#app-top {
+    background:linear-gradient(#000,#313131)
+}
